@@ -14,31 +14,31 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-       
+
         <div className="content">
-        {/* <PanelHeader
+          {/* <PanelHeader
           size="sm" /> */}
           <Row>
             <Col xs={12} md={15}>
-            <div className="chart-area">
-                    <div id="slide1" >
-                    <Carousel>
-                <div>
-                    <img src={slide1} />
-                    <p className="legend">To comfort you</p>
+              <div className="chart-area">
+                <div id="slide1" >
+                  <Carousel>
+                    <div>
+                      <img src={slide1} />
+                      <p className="legend">To comfort you</p>
+                    </div>
+                    <div>
+                      <img src={slide2} />
+                      <p className="legend">Take you to your dream places</p>
+                    </div>
+                    <div>
+                      <img src={slide3} />
+                      <p className="legend">Make your home</p>
+                    </div>
+                  </Carousel>
+
                 </div>
-                <div>
-                    <img src={slide2}  />
-                    <p className="legend">Take you to your dream places</p>
-                </div>
-                <div>
-                    <img src={slide3}  />
-                    <p className="legend">Make your home</p>
-                </div>
-            </Carousel>
-                     
-                  </div>
-                    </div>  
+              </div>
               {/* <Card className="card-chart">
                 <CardHeader>
                   <CardCategory>Industrial Training Unit</CardCategory>

@@ -2,15 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
-
 import "bootstrap/dist/css/bootstrap.css";
 import "assets/scss/now-ui-dashboard.css";
 import "assets/css/demo.css";
 import "assets/css/tasks.css";
 import Login from "./views/Login/Login";
 import indexRoutes from "routes/index.jsx";
-const hist = createBrowserHistory();
 
+const hist = createBrowserHistory();
 function checkLogin() {
   if (!sessionStorage.getItem("loging_status")) {
     return (
@@ -21,10 +20,12 @@ function checkLogin() {
           return (
            <div>
               {/* <Redirect to="/" /> */}
+          
             <Route path={prop.path} key={key} component={prop.component} />
             </div>
+            
           );
-        })}
+          })}
       </div>
     );
   } else {

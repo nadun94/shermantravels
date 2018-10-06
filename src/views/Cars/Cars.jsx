@@ -2,6 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { DateFormatInput, TimeFormatInput } from 'material-ui-next-pickers'
 import {
   Card,
   Button,
@@ -36,28 +37,61 @@ import img_hot from "../../assets/logos/hot.png";
 import "react-datepicker/dist/react-datepicker.css";
 import car1 from "../../assets/img/car1.png";
 import car2 from "../../assets/img/car2.png";
+import car3 from "../../assets/img/car3.png";
+import car4 from "../../assets/img/car4.png";
+import car5 from "../../assets/img/car5.png";
+import car6 from "../../assets/img/car6.png";
+import car7 from "../../assets/img/car7.png";
+import car8 from "../../assets/img/car8.png";
 import n1 from "../../assets/img/n1.jpg";
 import n2 from "../../assets/img/n2.jpg";
 import n3 from "../../assets/img/n3.jpg";
-import { PanelHeader, FormInputs } from "components";
+import TextField from '@material-ui/core/TextField';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { arrow_back } from '@material-ui/icons';
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 200,
+  },
+});
 
 class Cars extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       city: "Colombo",
       activeTab: "1",
       startDate: moment(),
-      show_tab: false
+      show_tab: false,
+      check_autowire: false,
+      check_trip: false,
+      check_hot: false,
+      check_kayak: false,
+      date1: "",
+      time1: '',
+      check_diff: false,
+      tab_val: 0,
     };
+
     //this.handleDate = this.handleDate.bind(this);
     this.handleattributes = this.handleattributes.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.selectRates = this.selectRates.bind(this);
+    this.goBack = this.goBack.bind(this);
     // this.clear=this.clear.bind(this);
     // this.check=this.check.bind(this);
     // checkerror=this.checkerror.bind(this);
   }
+
 
   // clear() {
 
@@ -66,12 +100,37 @@ class Cars extends React.Component {
   //     })
 
   // }
+  goBack(){
+    this.setState({show_tab:false})
+  }
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
 
 
-  handleChange(date) {
+  handleChangeSwitch = name => event => {
+    this.setState({ [name]: event.target.checked });
+  };
+  handleChange(date1) {
     this.setState({
-      startDate: date
+      startDate: date1
     });
+  }
+  onChangeDate1 = (date1: Date) => {
+    console.log('Date: ', date1)
+    this.setState({ date1 })
+  }
+  onChangeTime1 = (time1: Date) => {
+    console.log('Time: ', time1)
+    this.setState({ time1 })
+  }
+  onChangeDate2 = (date2: Date) => {
+    console.log('Date: ', date2)
+    this.setState({ date2 })
+  }
+  onChangeTime2 = (time2: Date) => {
+    console.log('Time: ', time2)
+    this.setState({ time2 })
   }
   handleattributes({ target }) {
     console.log(target.value);
@@ -87,42 +146,45 @@ class Cars extends React.Component {
       });
     }
   }
+
   selectRates() {
     this.setState({ show_tab: true });
   }
   //render start******************************************************
   render() {
+    const { classes } = this.props;
+    const { date1, time1, date2, time2 } = this.state
     return (
       <div>
         {/* <PanelHeader size="sm" /> */}
         <div className="container-fluid">
-          <Row>
+          <Row className="carousel-container">
             <Col md={12} xs={12}>
-              <Card body outline color="danger">
+              <Card body outline className="text-center" color="danger">
                 <div id="slide1">
-                <Carousel>
-                <div>
-                    <img src={n1} />
-                    <p className="legend">To comfort you</p>
-                </div>
-                <div>
-                    <img src={n2}  />
-                    <p className="legend">Take you to your dream places</p>
-                </div>
-                <div>
-                    <img src={n3}  />
-                    <p className="legend">Make your home</p>
-                </div>
-            </Carousel>
+                  <Carousel>
+                    <div>
+                      <img src={n1} />
+                      <p className="legend">To comfort you</p>
+                    </div>
+                    <div>
+                      <img src={n2} />
+                      <p className="legend">Take you to your dream places</p>
+                    </div>
+                    <div>
+                      <img src={n3} />
+                      <p className="legend">Make your home</p>
+                    </div>
+                  </Carousel>
                 </div>
               </Card>
             </Col>
           </Row>
 
-          <Row>
+          {!this.state.show_tab && <Row>
             <Col md={12} xs={12}>
               <CardGroup>
-                <Card body className="text-center"  inverse style={{ backgroundColor: '#efefef', borderColor: '#333' }}>
+                <Card body className="text-center" style={{ backgroundColor: '#FAFAFA', borderColor: '#333' }}>
                   <div className="card-content">
                     <CardHeader>
                       <h5 className="title">
@@ -159,7 +221,7 @@ class Cars extends React.Component {
                         </div>
                         <div className="row">
                           <div className="col-md-5">
-                            <FormGroup>
+                            {this.state.check_diff && <FormGroup>
                               <Label for="exampleSelect">
                                 Drop-Off Location
                               </Label>
@@ -180,7 +242,18 @@ class Cars extends React.Component {
                                 <option>London, United Kingdom (LHR)</option>
                                 <option>Amsterdam, Netherlands (AMS)</option>
                               </Input>
-                            </FormGroup>
+                            </FormGroup>}
+                            <FormControlLabel
+                              control={
+                                <Switch
+                                  checked={this.state.check_diff}
+                                  onChange={this.handleChangeSwitch('check_diff')}
+                                  value="check_diff"
+                                  color="primary"
+                                />
+                              }
+                              label="Return to different location"
+                            />
                           </div>
                         </div>
 
@@ -188,32 +261,31 @@ class Cars extends React.Component {
                           <div className="col-md-5">
                             <FormGroup>
                               <Label for="exampleSelect">Pick-Up</Label>
-                              <DatePicker
-                                selected={this.state.date}
-                                onChange={this.handleChange}
-                                showTimeSelect
-                                dateFormat="LLL"
-                              />
+
+                              <DateFormatInput name='date-input' value={date1} onChange={this.onChangeDate1} />
+                              <br />
+                              <TimeFormatInput name='time-input' value={time1} onChange={this.onChangeTime1} />
                             </FormGroup>
                           </div>
 
                           <div className="col-md-5">
                             <FormGroup>
-                              <Label for="exampleSelect">Pick-Up</Label>
-                              <DatePicker
-                                selected={this.state.date}
-                                onChange={this.handleChange}
-                                showTimeSelect
-                                dateFormat="LLL"
-                              />
+                              <Label for="exampleSelect">Drop-Off</Label>
+
+                              <DateFormatInput name='date-input2' value={date2} onChange={this.onChangeDate2} />
+                              <br />
+
+                              <TimeFormatInput name='time-input2' value={time2} onChange={this.onChangeTime2} />
+
                             </FormGroup>
                           </div>
+                          <br />
                         </div>
                         <div className="row">
                           <div className="col-md-5">
                             <FormGroup>
                               <Label for="exampleSelect">
-                                Drop-Off Location
+                                Car Type
                               </Label>
                               <Input
                                 type="select"
@@ -307,7 +379,7 @@ class Cars extends React.Component {
                     </CardBody>
                   </div>
                 </Card>
-                <Card  inverse style={{ backgroundColor:  '#efefef', borderColor: '#333' }}> 
+                <Card className="text-center" style={{ backgroundColor: '#FAFAFA', borderColor: '#333' }}>
                   <div className="card-content">
                     <CardHeader>
                       <h5 className="title">
@@ -321,11 +393,12 @@ class Cars extends React.Component {
                       <FormGroup>
                         <div>
                           <span className="carlogo">
-                            {" "}
-                            <CustomInput
-                              type="checkbox"
-                              id="exampleCustomCheckbox"
-                              size="lg"
+
+                            <Switch
+                              checked={this.state.check_autowire}
+                              onChange={this.handleChangeSwitch('check_autowire')}
+                              value="check_autowire"
+                              color="primary"
                             />
                             <img
                               className="carlogo-size"
@@ -334,12 +407,14 @@ class Cars extends React.Component {
                             />
                           </span>
                           <span className="carlogo">
-                            {" "}
-                            <CustomInput
-                              type="checkbox"
-                              id="exampleCustomCheckbox"
-                              size="lg"
+                            {"               "}
+                            <Switch
+                              checked={this.state.check_trip}
+                              onChange={this.handleChangeSwitch('check_trip')}
+                              value="check_trip"
+                              color="primary"
                             />
+                            {"  "}
                             <img
                               className="carlogo-size"
                               src={img_trip}
@@ -348,10 +423,11 @@ class Cars extends React.Component {
                           </span>
                           <span className="carlogo">
                             {" "}
-                            <CustomInput
-                              type="checkbox"
-                              id="exampleCustomCheckbox"
-                              size="lg"
+                            <Switch
+                              checked={this.state.check_kayak}
+                              onChange={this.handleChangeSwitch('check_kayak')}
+                              value="check_kayak"
+                              color="primary"
                             />
                             <img
                               className="carlogo-size"
@@ -361,10 +437,11 @@ class Cars extends React.Component {
                           </span>
                           <span className="carlogo">
                             {" "}
-                            <CustomInput
-                              type="checkbox"
-                              id="exampleCustomCheckbox"
-                              size="lg"
+                            <Switch
+                              checked={this.state.check_hot}
+                              onChange={this.handleChangeSwitch('check_hot')}
+                              value="check_hot"
+                              color="primary"
                             />
                             <img
                               className="carlogo-size"
@@ -386,19 +463,24 @@ class Cars extends React.Component {
                 </Card>
               </CardGroup>
             </Col>
-          </Row>
+          </Row>}
           <Row>
             <Col md={12} xs={12}>
               {this.state.show_tab && (
-                <Card body className="text-center">
+                <Card className="text-center" body className="text-center">
                   <div className="card-content">
                     <CardHeader>
                       <h5 className="title">Cars</h5>
+
+                  
                     </CardHeader>
+                    
+                  
                     <CardBody>
+                    <Button color="primary" size="sm" onClick={this.goBack}>Go Back</Button>{' '}
                       <div>
                         <Nav tabs>
-                          <NavItem>
+                          {this.state.check_autowire && <NavItem>
                             <NavLink
                               className={classnames({
                                 active: this.state.activeTab === "1"
@@ -409,62 +491,118 @@ class Cars extends React.Component {
                             >
                               AutoRentals
                             </NavLink>
-                          </NavItem>
-                          {/* <NavItem>
-                       <NavLink
-                         className={classnames({ active: this.state.activeTab === '2' })}
-                         onClick={() => { this.toggle('2'); }}
-                       >
-                         Moar Tabs
+                          </NavItem>}
+                          {this.state.check_trip && <NavItem>
+                            <NavLink
+                              className={classnames({ active: this.state.activeTab === '2' })}
+                              onClick={() => { this.toggle('2'); }}
+                            >
+                              TripAdvisor
          </NavLink>
-                     </NavItem> */}
+                          </NavItem>}
+                          {this.state.check_kayak && <NavItem>
+                            <NavLink
+                              className={classnames({ active: this.state.activeTab === '3' })}
+                              onClick={() => { this.toggle('3'); }}
+                            >
+                              Kayak
+         </NavLink>
+                          </NavItem>}
+                          {this.state.check_hot && <NavItem>
+                            <NavLink
+                              className={classnames({ active: this.state.activeTab === '4' })}
+                              onClick={() => { this.toggle('4'); }}
+                            >
+                              HotWire
+         </NavLink>
+                          </NavItem>}
                         </Nav>
                         <TabContent activeTab={this.state.activeTab}>
-                          <TabPane tabId="1">
+                          {this.state.check_autowire && <TabPane tabId="1">
                             <Row>
                               <Col sm="4">
                                 {/* <Card > */}
-                                  <CardTitle>Honda Civic</CardTitle>
-                                  <CardText>40$ per hour</CardText>
-                                  <CardImg top width="100%"  src={car1} alt="Card image cap" />
+                                <CardTitle>Honda Civic</CardTitle>
+                                <CardText>40$ per hour</CardText>
+                                <CardImg top width="100%" src={car1} alt="Card image cap" />
 
                                 {/* </Card> */}
                               </Col>
                               <Col sm="4">
-                               
-                                  <CardTitle>Mazda G8</CardTitle>
-                                  <CardText>60$ per hour</CardText>
-                                  <CardImg top width="100%"  src={car2} alt="Card image cap" />
-                               
-                           
+
+                                <CardTitle>Mazda G8</CardTitle>
+                                <CardText>60$ per hour</CardText>
+                                <CardImg top width="100%" src={car2} alt="Card image cap" />
+
+
                               </Col>
                             </Row>
-                          </TabPane>
-                          <TabPane tabId="2">
+                          </TabPane>}
+                          {this.state.check_trip &&
+                            <TabPane tabId="2">
+                              <Row>
+                                <Col sm="4">
+                                  {/* <Card > */}
+                                  <CardTitle>Kia F6</CardTitle>
+                                  <CardText>44$ per hour</CardText>
+                                  <CardImg top width="100%" src={car3} alt="Card image cap" />
+
+                                  {/* </Card> */}
+                                </Col>
+                                <Col sm="4">
+
+                                  <CardTitle>Benze G8</CardTitle>
+                                  <CardText>100$ per hour</CardText>
+                                  <CardImg top width="100%" src={car4} alt="Card image cap" />
+
+
+                                </Col>
+                              </Row>
+                            </TabPane>
+                          }
+
+                          {this.state.check_kayak && <TabPane tabId="3">
                             <Row>
                               <Col sm="4">
-                                <Card body>
-                                  <CardTitle>Special Title Treatment</CardTitle>
-                                  <CardText>
-                                    With supporting text below as a natural
-                                    lead-in to additional content.
-                                  </CardText>
-                                  <Button>Go somewhere</Button>
-                                </Card>
+                                {/* <Card > */}
+                                <CardTitle>Chavorlet</CardTitle>
+                                <CardText>50$ per hour</CardText>
+                                <CardImg top width="100%" src={car5} alt="Card image cap" />
+
+                                {/* </Card> */}
                               </Col>
                               <Col sm="4">
-                                <Card body>
-                                  <CardTitle>Special Title Treatment</CardTitle>
-                                  <CardText>
-                                    With supporting text below as a natural
-                                    lead-in to additional content.
-                                  </CardText>
-                                  <Button>Go somewhere</Button>
-                                </Card>
+
+                                <CardTitle>Toyota Premier</CardTitle>
+                                <CardText>80$ per hour</CardText>
+                                <CardImg top width="100%" src={car6} alt="Card image cap" />
+
+
                               </Col>
                             </Row>
                           </TabPane>
-                        </TabContent>
+                          }
+                          {this.state.check_hot && <TabPane tabId="4">
+                            <Row>
+                              <Col sm="4">
+                                {/* <Card > */}
+                                <CardTitle>Toyota Hut</CardTitle>
+                                <CardText>63$ per hour</CardText>
+                                <CardImg top width="100%" src={car7} alt="Card image cap" />
+
+                                {/* </Card> */}
+                              </Col>
+                              <Col sm="4">
+
+                                <CardTitle>Mazda L2</CardTitle>
+                                <CardText>60$ per hour</CardText>
+                                <CardImg top width="100%" src={car8} alt="Card image cap" />
+
+
+                              </Col>
+                            </Row>
+                          </TabPane>
+                          } </TabContent>
                       </div>
                     </CardBody>
                   </div>
