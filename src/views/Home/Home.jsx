@@ -41,7 +41,7 @@ class Home extends React.Component {
               </div>
               <Card className="card-chart">
                 <CardHeader>
-                  <CardCategory>Industrial Training Unit</CardCategory>
+                 
                   <CardTitle tag="h4">Get the best travelling experience from the experts... </CardTitle>
                 </CardHeader>
                 <CardBody>
