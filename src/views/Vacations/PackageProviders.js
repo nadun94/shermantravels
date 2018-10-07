@@ -28,7 +28,7 @@ class PackageProviders extends React.Component {
                                     <Form>
                                         <div id="pacakageProviders" data-tip data-for='PackageProviderTip'>
 
-                                               <span class=> <Input type="checkbox" checked="checked" ></Input>
+                                               <span> <Input type="checkbox" checked="checked" ></Input>
                                                 <Label for="adults"><img className="logo1" src={img_autorent}  alt="fireSpot"/></Label></span>
 
                                                 <span><Input type="checkbox" class="form-control"></Input>
