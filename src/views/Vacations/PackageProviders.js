@@ -11,7 +11,7 @@ import img_kaya from '../../assets/logos/kaya.png';
 import img_hot from '../../assets/logos/hot.png';
 import img_hot1 from '../../assets/logos/navo1.png';
 import img_hot2 from '../../assets/logos/navo2.png';
-import '../../assets/css/checkboxStyles.css'
+// import '../../assets/css/checkboxStyles.css'
 import HeadingStyle1 from '../../assets/css/Headings1.css'
 import moment from "moment/moment";
 import Switch from '@material-ui/core/Switch';

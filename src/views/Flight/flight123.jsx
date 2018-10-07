@@ -229,21 +229,22 @@ class Cars extends React.Component {
                                                             <Label for="exampleSelect">
                                                                 From
                               </Label>
-                                                            <Input
-                                                                type="select"
-                                                                name="city"
-                                                                id="city"
-                                                                onClick={this.handleattributes}
-                                                                value={this.state.city}
-
-                                                            >
+                                                            <Input type="select" name="city" id="exampleSelect" onChange={this.handleattributes}>
                                                                 <option>From</option>
-                                                                <option value="colombo" onSelected={this.handleattributes} >Colombo, Sri Lanka (CMB)</option>
-                                                                <option value="San_Francisco" onSelected={this.handleattributes}  >San Francisco, CA (SFO)</option>
-                                                                <option value="Newyork" onSelected={this.handleattributes}>New York City Airports (NYC)</option>
 
+                                                                <option value="Colombo">Colombo, Sri Lanka (CMB)</option>
+                                                                <option value="San Francisco">San Francisco, CA (SFO)</option>
+                                                                <option value="New York City">New York City Airports (NYC)</option>
+                                                                <option value="Sydney">Sydney, Australia (SYD)</option>
+                                                                <option value="Denver">Denver, CO (DEN)</option>
+                                                                <option value="Tokyo">Tokyo Airports (TYO)</option>
+                                                                <option value="Berlin">Berlin Airports (BER)</option>
+                                                                <option value="Beijing">Beijing, China (PEK)</option>
+                                                                <option value="London">London, United Kingdom (LHR)</option>
+                                                                <option value="Amsterdam">Amsterdam, Netherlands (AMS)</option>
                                                             </Input>
                                                         </FormGroup>
+
                                                     </div>
                                                 </div>
                                                 <div className="row">
@@ -271,9 +272,9 @@ class Cars extends React.Component {
 
                                                     </div>
                                                 </div>
-                                                
 
-                                              
+
+
 
                                                 <div className="row">
                                                     <div className="col-md-5">
@@ -301,16 +302,16 @@ class Cars extends React.Component {
                                                 </div>
                                                 <div className="row">
                                                     <div className="col-md-5">
-                                                    <FormGroup>
-                                                    <Label for="exampleSelect">Travelers</Label>
-                                                    <Input type="select" name="select" id="exampleSelect">
-                                                      <option>1</option>
-                                                      <option>2</option>
-                                                      <option>3</option>
-                                                      <option>4</option>
-                      
-                                                    </Input>
-                                                  </FormGroup>
+                                                        <FormGroup>
+                                                            <Label for="exampleSelect">Travelers</Label>
+                                                            <Input type="select" name="select" id="exampleSelect">
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+
+                                                            </Input>
+                                                        </FormGroup>
                                                     </div>
                                                 </div>
 
@@ -337,7 +338,7 @@ class Cars extends React.Component {
                                     <div className="card-content">
                                         <CardHeader>
                                             <h5 className="title">
-                                                Click on multiple sites to get the lowest prices 
+                                                Click on multiple sites to get the lowest prices
                       </h5>
                                         </CardHeader>
                                         <CardBody>
@@ -443,7 +444,7 @@ class Cars extends React.Component {
                                                                 this.toggle("1");
                                                             }}
                                                         >
-                                                       Avoya  Travels
+                                                            Avoya  Travels
                             </NavLink>
                                                     </NavItem>}
                                                     {this.state.check_trip && <NavItem>
@@ -480,7 +481,7 @@ class Cars extends React.Component {
                                                                 <CardText>40$ Per Head</CardText>
                                                                 <CardImg top width="100%" src={car1} alt="Card image cap" />
                                                                 <Button color="Black" size="lg" >
-                            Book Now
+                                                                    Book Now
                         </Button>
 
                                                                 {/* </Card> */}
@@ -491,7 +492,7 @@ class Cars extends React.Component {
                                                                 <CardText>60$ per Head</CardText>
                                                                 <CardImg top width="100%" src={car2} alt="Card image cap" />
                                                                 <Button color="Black" size="lg" >
-                            Book Now
+                                                                    Book Now
                         </Button>
 
 
@@ -507,7 +508,7 @@ class Cars extends React.Component {
                                                                     <CardText>44$ per Head</CardText>
                                                                     <CardImg top width="100%" src={car3} alt="Card image cap" />
                                                                     <Button color="Black" size="lg" >
-                            Book Now
+                                                                        Book Now
                         </Button>
 
                                                                     {/* </Card> */}
@@ -518,7 +519,7 @@ class Cars extends React.Component {
                                                                     <CardText>100$ per Head</CardText>
                                                                     <CardImg top width="100%" src={car4} alt="Card image cap" />
                                                                     <Button color="Black" size="lg" >
-                            Book Now
+                                                                        Book Now
                         </Button>
 
 
@@ -535,7 +536,7 @@ class Cars extends React.Component {
                                                                 <CardText>50$ per Head</CardText>
                                                                 <CardImg top width="100%" src={car5} alt="Card image cap" />
                                                                 <Button color="Black" size="lg" >
-                            Book Now
+                                                                    Book Now
                         </Button>
 
                                                                 {/* </Card> */}
@@ -546,7 +547,7 @@ class Cars extends React.Component {
                                                                 <CardText>80$ per Head</CardText>
                                                                 <CardImg top width="100%" src={car6} alt="Card image cap" />
                                                                 <Button color="Black" size="lg" >
-                            Book Now
+                                                                    Book Now
                         </Button>
 
 
@@ -563,7 +564,7 @@ class Cars extends React.Component {
                                                                 <CardText>63$ per Head</CardText>
                                                                 <CardImg top width="100%" src={car7} alt="Card image cap" />
                                                                 <Button color="Black" size="lg" >
-                            Book Now
+                                                                    Book Now
                         </Button>
 
                                                                 {/* </Card> */}
@@ -574,7 +575,7 @@ class Cars extends React.Component {
                                                                 <CardText>60$ per hour</CardText>
                                                                 <CardImg top width="100%" src={car8} alt="Card image cap" />
                                                                 <Button color="Black" size="lg" >
-                            Book Now
+                                                                    Book Now
                         </Button>
 
 

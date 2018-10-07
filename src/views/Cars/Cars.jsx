@@ -281,19 +281,21 @@ class Cars extends React.Component {
                               </Label>
                               <Input
                                 type="select"
-                                name="select"
+                                name="city"
                                 id="exampleSelect"
+                                value={this.state.city}
+                                onChange={this.handleattributes}
                               >
-                                <option>Colombo, Sri Lanka (CMB)</option>
-                                <option>San Francisco, CA (SFO)</option>
-                                <option>New York City Airports (NYC)</option>
-                                <option>Sydney, Australia (SYD)</option>
-                                <option>Denver, CO (DEN)</option>
-                                <option>Tokyo Airports (TYO)</option>
-                                <option>Berlin Airports (BER)</option>
-                                <option>Beijing, China (PEK)</option>
-                                <option>London, United Kingdom (LHR)</option>
-                                <option>Amsterdam, Netherlands (AMS)</option>
+                                <option value="Colombo">Colombo, Sri Lanka (CMB)</option>
+                                <option value="San Francisco">San Francisco, CA (SFO)</option>
+                                <option value="New York City">New York City Airports (NYC)</option>
+                                <option value="Sydney">Sydney, Australia (SYD)</option>
+                                <option value="Denver">Denver, CO (DEN)</option>
+                                <option value="Tokyo">Tokyo Airports (TYO)</option>
+                                <option value="Berlin">Berlin Airports (BER)</option>
+                                <option value="Beijing">Beijing, China (PEK)</option>
+                                <option value="London">London, United Kingdom (LHR)</option>
+                                <option value="Amsterdam">Amsterdam, Netherlands (AMS)</option>
                               </Input>
                             </FormGroup>
                           </div>
