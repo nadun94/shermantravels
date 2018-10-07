@@ -35,14 +35,14 @@ import img_trip from "../../assets/logos/trip.png";
 import img_kaya from "../../assets/logos/kaya.png";
 import img_hot from "../../assets/logos/Cruise2.png";
 import "react-datepicker/dist/react-datepicker.css";
-import car1 from "../../assets/img/car1.png";
-import car2 from "../../assets/img/car2.png";
-import car3 from "../../assets/img/car3.png";
-import car4 from "../../assets/img/car4.png";
-import car5 from "../../assets/img/car5.png";
-import car6 from "../../assets/img/car6.png";
-import car7 from "../../assets/img/car7.png";
-import car8 from "../../assets/img/car8.png";
+import car1 from "../../assets/img/sl.png";
+import car2 from "../../assets/img/emi.png";
+import car3 from "../../assets/img/airn.png";
+import car4 from "../../assets/img/airbu.png";
+import car5 from "../../assets/img/qa.png";
+import car6 from "../../assets/img/th.jpg";
+import car7 from "../../assets/img/sin.png";
+import car8 from "../../assets/img/eva.png";
 import n1 from "../../assets/img/adf.jpg";
 import n2 from "../../assets/img/dea.jpg";
 import n3 from "../../assets/img/dcn.jpg";
@@ -337,7 +337,7 @@ class Cars extends React.Component {
                                     <div className="card-content">
                                         <CardHeader>
                                             <h5 className="title">
-                                                Click on multiple sites to get the lowest prices
+                                                Click on multiple sites to get the lowest prices 
                       </h5>
                                         </CardHeader>
                                         <CardBody>
@@ -424,7 +424,7 @@ class Cars extends React.Component {
                                 <Card className="text-center" body className="text-center">
                                     <div className="card-content">
                                         <CardHeader>
-                                            <h5 className="title">Cars</h5>
+                                            <h5 className="title">Flights</h5>
 
 
                                         </CardHeader>
@@ -443,7 +443,7 @@ class Cars extends React.Component {
                                                                 this.toggle("1");
                                                             }}
                                                         >
-                                                            AutoRentals
+                                                       Avoya  Travels
                             </NavLink>
                                                     </NavItem>}
                                                     {this.state.check_trip && <NavItem>
@@ -467,7 +467,7 @@ class Cars extends React.Component {
                                                             className={classnames({ active: this.state.activeTab === '4' })}
                                                             onClick={() => { this.toggle('4'); }}
                                                         >
-                                                            HotWire
+                                                            Expedia
          </NavLink>
                                                     </NavItem>}
                                                 </Nav>
@@ -476,17 +476,23 @@ class Cars extends React.Component {
                                                         <Row>
                                                             <Col sm="4">
                                                                 {/* <Card > */}
-                                                                <CardTitle>Honda Civic</CardTitle>
-                                                                <CardText>40$ per hour</CardText>
+                                                                <CardTitle>Srilankan Airlines</CardTitle>
+                                                                <CardText>40$ Per Head</CardText>
                                                                 <CardImg top width="100%" src={car1} alt="Card image cap" />
+                                                                <Button color="Black" size="lg" >
+                            Book Now
+                        </Button>
 
                                                                 {/* </Card> */}
                                                             </Col>
                                                             <Col sm="4">
 
-                                                                <CardTitle>Mazda G8</CardTitle>
-                                                                <CardText>60$ per hour</CardText>
+                                                                <CardTitle>Emirates Dubai</CardTitle>
+                                                                <CardText>60$ per Head</CardText>
                                                                 <CardImg top width="100%" src={car2} alt="Card image cap" />
+                                                                <Button color="Black" size="lg" >
+                            Book Now
+                        </Button>
 
 
                                                             </Col>
@@ -497,17 +503,23 @@ class Cars extends React.Component {
                                                             <Row>
                                                                 <Col sm="4">
                                                                     {/* <Card > */}
-                                                                    <CardTitle>Kia F6</CardTitle>
-                                                                    <CardText>44$ per hour</CardText>
+                                                                    <CardTitle>Air India</CardTitle>
+                                                                    <CardText>44$ per Head</CardText>
                                                                     <CardImg top width="100%" src={car3} alt="Card image cap" />
+                                                                    <Button color="Black" size="lg" >
+                            Book Now
+                        </Button>
 
                                                                     {/* </Card> */}
                                                                 </Col>
                                                                 <Col sm="4">
 
-                                                                    <CardTitle>Benze G8</CardTitle>
-                                                                    <CardText>100$ per hour</CardText>
+                                                                    <CardTitle>Air Bus</CardTitle>
+                                                                    <CardText>100$ per Head</CardText>
                                                                     <CardImg top width="100%" src={car4} alt="Card image cap" />
+                                                                    <Button color="Black" size="lg" >
+                            Book Now
+                        </Button>
 
 
                                                                 </Col>
@@ -519,17 +531,23 @@ class Cars extends React.Component {
                                                         <Row>
                                                             <Col sm="4">
                                                                 {/* <Card > */}
-                                                                <CardTitle>Chavorlet</CardTitle>
-                                                                <CardText>50$ per hour</CardText>
+                                                                <CardTitle>Qatar AirWays</CardTitle>
+                                                                <CardText>50$ per Head</CardText>
                                                                 <CardImg top width="100%" src={car5} alt="Card image cap" />
+                                                                <Button color="Black" size="lg" >
+                            Book Now
+                        </Button>
 
                                                                 {/* </Card> */}
                                                             </Col>
                                                             <Col sm="4">
 
-                                                                <CardTitle>Toyota Premier</CardTitle>
-                                                                <CardText>80$ per hour</CardText>
+                                                                <CardTitle>Thai Airways</CardTitle>
+                                                                <CardText>80$ per Head</CardText>
                                                                 <CardImg top width="100%" src={car6} alt="Card image cap" />
+                                                                <Button color="Black" size="lg" >
+                            Book Now
+                        </Button>
 
 
                                                             </Col>
@@ -537,20 +555,27 @@ class Cars extends React.Component {
                                                     </TabPane>
                                                     }
                                                     {this.state.check_hot && <TabPane tabId="4">
+
                                                         <Row>
                                                             <Col sm="4">
                                                                 {/* <Card > */}
-                                                                <CardTitle>Toyota Hut</CardTitle>
-                                                                <CardText>63$ per hour</CardText>
+                                                                <CardTitle>Singapore Airways </CardTitle>
+                                                                <CardText>63$ per Head</CardText>
                                                                 <CardImg top width="100%" src={car7} alt="Card image cap" />
+                                                                <Button color="Black" size="lg" >
+                            Book Now
+                        </Button>
 
                                                                 {/* </Card> */}
                                                             </Col>
                                                             <Col sm="4">
 
-                                                                <CardTitle>Mazda L2</CardTitle>
+                                                                <CardTitle>Eva Air</CardTitle>
                                                                 <CardText>60$ per hour</CardText>
                                                                 <CardImg top width="100%" src={car8} alt="Card image cap" />
+                                                                <Button color="Black" size="lg" >
+                            Book Now
+                        </Button>
 
 
                                                             </Col>
