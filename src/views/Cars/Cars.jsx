@@ -56,10 +56,12 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
+import StarRatingComponent from 'react-star-rating-component';
 const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
+    rating: 5
   },
 
   textField: {
@@ -88,7 +90,7 @@ class Cars extends React.Component {
       time1: '',
       check_diff: false,
       tab_val: 0,
-      open:false,
+      open: false,
     };
 
     //this.handleDate = this.handleDate.bind(this);
@@ -109,6 +111,34 @@ class Cars extends React.Component {
   //     })
 
   // }
+
+  onStarClick1(nextValue, prevValue, name) {
+    this.setState({ rating1: nextValue });
+  }
+  onStarClick2(nextValue, prevValue, name) {
+    this.setState({ rating2: nextValue });
+  }
+  onStarClick3(nextValue, prevValue, name) {
+    this.setState({ rating3: nextValue });
+  }
+  onStarClick4(nextValue, prevValue, name) {
+    this.setState({ rating4: nextValue });
+  }
+  onStarClick5(nextValue, prevValue, name) {
+    this.setState({ rating5: nextValue });
+  }
+  onStarClick6(nextValue, prevValue, name) {
+    this.setState({ rating6: nextValue });
+  }
+  onStarClick7(nextValue, prevValue, name) {
+    this.setState({ rating7: nextValue });
+  }
+  onStarClick8(nextValue, prevValue, name) {
+    this.setState({ rating8: nextValue });
+  }
+
+
+
   goBack() {
     this.setState({ show_tab: false })
   }
@@ -164,7 +194,7 @@ class Cars extends React.Component {
   }
 
   selectRates() {
-    if (this.state.check_kayak === false && this.state.check_autowire === false && this.state.check_hot===false && this.state.check_trip === false) {
+    if (this.state.check_kayak === false && this.state.check_autowire === false && this.state.check_hot === false && this.state.check_trip === false) {
       this.handleClickOpen()
     } else {
       this.setState({ show_tab: true });
@@ -173,6 +203,7 @@ class Cars extends React.Component {
   }
   //render start******************************************************
   render() {
+    const { rating1,rating2,rating3,rating4,rating5,rating6,rating7,rating8 } = this.state;
     const { classes } = this.props;
     const { date1, time1, date2, time2 } = this.state
     return (
@@ -188,12 +219,12 @@ class Cars extends React.Component {
             aria-describedby="alert-dialog-slide-description"
           >
             <DialogTitle id="alert-dialog-slide-title">
-             <h2>{"  Woops!"}</h2> 
+              <h2>{"  Woops!"}</h2>
             </DialogTitle>
             <DialogContent>
               <DialogContentText id="alert-dialog-slide-description">
-               <h3>Please select one or more service providers to get the lowest rates.</h3> 
-    </DialogContentText>
+                <h3>Please select one or more service providers to get the lowest rates.</h3>
+              </DialogContentText>
             </DialogContent>
             <DialogActions>
               <Button onClick={this.handleClose} color="primary">
@@ -222,11 +253,11 @@ class Cars extends React.Component {
                       <p className="legend">Make your home</p>
                     </div>
                   </Carousel>
-                 
+
                 </div>
               </Card>
-         
-      </Col>
+
+            </Col>
           </Row>
 
           {!this.state.show_tab && <Row>
@@ -525,7 +556,8 @@ class Cars extends React.Component {
 
 
                     <CardBody>
-                      <Button color="primary" size="sm" onClick={this.goBack}>Go Back</Button>{' '}
+                      <div className="backbut"> <Button color="primary" size="sm" onClick={this.goBack}>Go Back</Button>{' '}</div>
+                     
                       <div>
                         <Nav tabs>
                           {this.state.check_autowire && <NavItem>
@@ -573,7 +605,15 @@ class Cars extends React.Component {
                                 <CardTitle>Honda Civic</CardTitle>
                                 <CardText>40$ per hour</CardText>
                                 <CardImg top width="100%" src={car1} alt="Card image cap" />
-
+                                <div>
+                                  <h6>Rating from state: {rating1}</h6>
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating1}
+                                    onStarClick={this.onStarClick1.bind(this)}
+                                  />
+                                </div>
                                 {/* </Card> */}
                               </Col>
                               <Col sm="4">
@@ -581,7 +621,15 @@ class Cars extends React.Component {
                                 <CardTitle>Mazda G8</CardTitle>
                                 <CardText>60$ per hour</CardText>
                                 <CardImg top width="100%" src={car2} alt="Card image cap" />
-
+                                <div>
+                                  <h6>Rating from state: {rating2}</h6>
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating2}
+                                    onStarClick={this.onStarClick2.bind(this)}
+                                  />
+                                </div>
 
                               </Col>
                             </Row>
@@ -594,7 +642,15 @@ class Cars extends React.Component {
                                   <CardTitle>Kia F6</CardTitle>
                                   <CardText>44$ per hour</CardText>
                                   <CardImg top width="100%" src={car3} alt="Card image cap" />
-
+                                  <div>
+                                  <h6>Rating from state: {rating3}</h6>
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating3}
+                                    onStarClick={this.onStarClick3.bind(this)}
+                                  />
+                                </div>
                                   {/* </Card> */}
                                 </Col>
                                 <Col sm="4">
@@ -602,7 +658,15 @@ class Cars extends React.Component {
                                   <CardTitle>Benze G8</CardTitle>
                                   <CardText>100$ per hour</CardText>
                                   <CardImg top width="100%" src={car4} alt="Card image cap" />
-
+                                  <div>
+                                  <h6>Rating from state: {rating4}</h6>
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating4}
+                                    onStarClick={this.onStarClick4.bind(this)}
+                                  />
+                                </div>
 
                                 </Col>
                               </Row>
@@ -616,16 +680,34 @@ class Cars extends React.Component {
                                 <CardTitle>Chavorlet</CardTitle>
                                 <CardText>50$ per hour</CardText>
                                 <CardImg top width="100%" src={car5} alt="Card image cap" />
-
+                                <div>
+                                  <h6>Rating from state: {rating5}</h6>
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating5}
+                                    onStarClick={this.onStarClick5.bind(this)}
+                                  />
+                                </div>
                                 {/* </Card> */}
+
                               </Col>
+
                               <Col sm="4">
 
                                 <CardTitle>Toyota Premier</CardTitle>
                                 <CardText>80$ per hour</CardText>
                                 <CardImg top width="100%" src={car6} alt="Card image cap" />
 
-
+<div>
+                                  <h6>Rating from state: {rating6}</h6>
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating6}
+                                    onStarClick={this.onStarClick6.bind(this)}
+                                  />
+                                </div>
                               </Col>
                             </Row>
                           </TabPane>
@@ -637,7 +719,15 @@ class Cars extends React.Component {
                                 <CardTitle>Toyota Hut</CardTitle>
                                 <CardText>63$ per hour</CardText>
                                 <CardImg top width="100%" src={car7} alt="Card image cap" />
-
+                                <div>
+                                  <h6>Rating from state: {rating7}</h6>
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating7}
+                                    onStarClick={this.onStarClick7.bind(this)}
+                                  />
+                                </div>
                                 {/* </Card> */}
                               </Col>
                               <Col sm="4">
@@ -646,7 +736,15 @@ class Cars extends React.Component {
                                 <CardText>60$ per hour</CardText>
                                 <CardImg top width="100%" src={car8} alt="Card image cap" />
 
-
+<div>
+                                  <h6>Rating from state: {rating8}</h6>
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating8}
+                                    onStarClick={this.onStarClick8.bind(this)}
+                                  />
+                                </div>
                               </Col>
                             </Row>
                           </TabPane>

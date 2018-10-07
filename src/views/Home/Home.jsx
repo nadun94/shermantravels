@@ -9,7 +9,7 @@ import slide2 from '../../assets/img/bg4.jpg';
 import slide3 from '../../assets/img/n1.jpg';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-
+import  ButtonBases  from './ImgBut.jsx';
 class Home extends React.Component {
   render() {
     return (
@@ -39,16 +39,16 @@ class Home extends React.Component {
 
                 </div>
               </div>
-              {/* <Card className="card-chart">
+              <Card className="card-chart">
                 <CardHeader>
                   <CardCategory>Industrial Training Unit</CardCategory>
-                  <CardTitle tag="h4">Internship program management</CardTitle>
+                  <CardTitle tag="h4">Get the best travelling experience from the experts... </CardTitle>
                 </CardHeader>
                 <CardBody>
-  
-                 
+
+                  <ButtonBases />
                 </CardBody>
-              </Card> */}
+              </Card>
             </Col>
           </Row>
         </div>
