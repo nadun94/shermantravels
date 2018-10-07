@@ -5,18 +5,22 @@ import Hotels from "../views/Hotels/Hotels.jsx";
 import Vacations from "../views/Vacations/Vactions.jsx";
 import Cruises from "../views/Cruises/Cruises.jsx";
 import Cars from "../views/Cars/Cars";
+import fligh from "../views/Flight/flight123.jsx"
 
 var dashRoutes = [
+
   {
     path: "/home",
     name: "Home",
     component: Home
   },
   {
-    path: "/flights",
-    name: "Fights",
-    component: flights
+    path: "/shermanflight",
+    name: "Flight",
+    icon: "users_single-02",
+    component: fligh
   },
+
   {
     path: "/hotels",
     name: "Hotels",
@@ -42,6 +46,7 @@ var dashRoutes = [
     icon: "users_single-02",
     component: Cars
   },
+
  
   { redirect: true, path: "/", pathTo: "/home", name: "Home" }
 ];
