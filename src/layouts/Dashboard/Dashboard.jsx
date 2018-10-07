@@ -30,9 +30,10 @@ class Dashboard extends React.Component {
   }
   render() {
     return (
-      
+      <div className="content">
+      <Header {...this.props} routes={dashboardRoutes} />
       <div className="wrapper">
-       <Header {...this.props} routes={dashboardRoutes} />
+     
       <div className="main-panel" ref="mainPanel">
        
        
@@ -55,10 +56,14 @@ class Dashboard extends React.Component {
                 <Route path={prop.path} component={prop.component} key={key} />
               );
             })}
+           
           </Switch>
-          <Footer fluid />
+          
         </div>
+        
       </div>
+       <Footer fluid />
+       </div>
     );
   }
 }

@@ -50,6 +50,12 @@ import TextField from '@material-ui/core/TextField';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { arrow_back } from '@material-ui/icons';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
 const styles = theme => ({
   container: {
     display: 'flex',
@@ -62,7 +68,9 @@ const styles = theme => ({
     width: 200,
   },
 });
-
+function Transition(props) {
+  return <Slide direction="up" {...props} />;
+}
 class Cars extends React.Component {
   constructor(props) {
     super(props);
@@ -80,6 +88,7 @@ class Cars extends React.Component {
       time1: '',
       check_diff: false,
       tab_val: 0,
+      open:false,
     };
 
     //this.handleDate = this.handleDate.bind(this);
@@ -100,13 +109,20 @@ class Cars extends React.Component {
   //     })
 
   // }
-  goBack(){
-    this.setState({show_tab:false})
+  goBack() {
+    this.setState({ show_tab: false })
   }
   handleChange = (event, value) => {
     this.setState({ value });
   };
 
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
 
   handleChangeSwitch = name => event => {
     this.setState({ [name]: event.target.checked });
@@ -148,14 +164,44 @@ class Cars extends React.Component {
   }
 
   selectRates() {
-    this.setState({ show_tab: true });
+    if (this.state.check_kayak === false && this.state.check_autowire === false && this.state.check_hot===false && this.state.check_trip === false) {
+      this.handleClickOpen()
+    } else {
+      this.setState({ show_tab: true });
+    }
+
   }
   //render start******************************************************
   render() {
     const { classes } = this.props;
     const { date1, time1, date2, time2 } = this.state
     return (
+
       <div>
+        <div>
+          <Dialog
+            open={this.state.open}
+            TransitionComponent={Transition}
+            keepMounted
+            onClose={this.handleClose}
+            aria-labelledby="alert-dialog-slide-title"
+            aria-describedby="alert-dialog-slide-description"
+          >
+            <DialogTitle id="alert-dialog-slide-title">
+             <h2>{"  Woops!"}</h2> 
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-slide-description">
+               <h3>Please select one or more service providers to get the lowest rates.</h3> 
+    </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={this.handleClose} color="primary">
+                Okay
+    </Button>
+            </DialogActions>
+          </Dialog>
+        </div>
         {/* <PanelHeader size="sm" /> */}
         <div className="container-fluid">
           <Row className="carousel-container">
@@ -176,9 +222,11 @@ class Cars extends React.Component {
                       <p className="legend">Make your home</p>
                     </div>
                   </Carousel>
+                 
                 </div>
               </Card>
-            </Col>
+         
+      </Col>
           </Row>
 
           {!this.state.show_tab && <Row>
@@ -472,12 +520,12 @@ class Cars extends React.Component {
                     <CardHeader>
                       <h5 className="title">Cars</h5>
 
-                  
+
                     </CardHeader>
-                    
-                  
+
+
                     <CardBody>
-                    <Button color="primary" size="sm" onClick={this.goBack}>Go Back</Button>{' '}
+                      <Button color="primary" size="sm" onClick={this.goBack}>Go Back</Button>{' '}
                       <div>
                         <Nav tabs>
                           {this.state.check_autowire && <NavItem>
