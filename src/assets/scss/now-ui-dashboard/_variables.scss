@@ -48,7 +48,7 @@ $default-color:              #888 !default;
 $default-states-color:       lighten($default-color, 6%) !default;
 $default-color-opacity:      rgba(182, 182, 182, .6) !default;
 
-$primary-color:              #f96332 !default;
+$primary-color:              #2196F3 ;
 $primary-states-color:       lighten($primary-color, 6%) !default;
 $primary-color-opacity:      rgba(249, 99, 50, .3) !default;
 $primary-color-alert:        rgba(249, 99, 50, .8) !default;
@@ -76,7 +76,7 @@ $danger-color-alert:         rgba(255, 54, 54, .8) !default;
 $orange-color:               #f96332 !default;
 
 /*     brand Colors              */
-$brand-primary:              $primary-color !default;
+$brand-primary:              #2196F3;
 $brand-info:                 $info-color !default;
 $brand-success:              $success-color !default;
 $brand-warning:              $warning-color !default;
@@ -225,7 +225,7 @@ $width-icon-message:			 40px;
 $height-icon-message-sm: 		 20px;
 $width-icon-message-sm:			 20px;
 
-$white-navbar:                  rgba(#FFFFFF, .96);
+$white-navbar:                  rgba(#FF9500, .96);
 $primary-navbar:                rgba(#34ACDC, .98);
 $info-navbar:                   rgba(#5BCAFF, .98);
 $success-navbar:                rgba(#4CD964, .98);
