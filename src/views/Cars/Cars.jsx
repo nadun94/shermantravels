@@ -59,9 +59,9 @@ import Slide from '@material-ui/core/Slide';
 import StarRatingComponent from 'react-star-rating-component';
 const styles = theme => ({
   container: {
-    display: 'flex',
+    display: 'inline-flex',
     flexWrap: 'wrap',
-    rating: 5
+    rating: 1
   },
 
   textField: {
