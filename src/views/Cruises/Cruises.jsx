@@ -482,18 +482,22 @@ class Cruises extends React.Component {
                                                             <Row>
                                                                 <Col sm="4">
                                                                     {/* <Card > */}
-                                                                    <CardTitle>Kia F6</CardTitle>
-                                                                    <CardText>44$ per hour</CardText>
+                                                                    <CardTitle>Gladiator</CardTitle>
+                                                                    <CardText>Availablility: 1000<br/>
+                                                                    Price per head: RS 5500.00
+                                                                </CardText>
                                                                     <CardImg top width="100%" src={car3} alt="Card image cap" />
-
+                                                                    <Button bsSize="small">Book Now</Button>
                                                                     {/* </Card> */}
                                                                 </Col>
                                                                 <Col sm="4">
 
-                                                                    <CardTitle>Benze G8</CardTitle>
-                                                                    <CardText>100$ per hour</CardText>
+                                                                    <CardTitle>Gallarita</CardTitle>
+                                                                    <CardText>Availablility: 1500<br/>
+                                                                    Price per head: RS 8500.00
+                                                                </CardText>
                                                                     <CardImg top width="100%" src={car4} alt="Card image cap" />
-
+                                                                    <Button bsSize="small">Book Now</Button>
 
                                                                 </Col>
                                                             </Row>
@@ -504,18 +508,22 @@ class Cruises extends React.Component {
                                                         <Row>
                                                             <Col sm="4">
                                                                 {/* <Card > */}
-                                                                <CardTitle>Chavorlet</CardTitle>
-                                                                <CardText>50$ per hour</CardText>
+                                                                <CardTitle>Banshee</CardTitle>
+                                                                <CardText>Availablility: 7500<br/>
+                                                                    Price per head: RS 10500.00
+                                                                </CardText>
                                                                 <CardImg top width="100%" src={car5} alt="Card image cap" />
-
+                                                                <Button bsSize="small">Book Now</Button>
                                                                 {/* </Card> */}
                                                             </Col>
                                                             <Col sm="4">
 
-                                                                <CardTitle>Toyota Premier</CardTitle>
-                                                                <CardText>80$ per hour</CardText>
+                                                                <CardTitle>Rubi</CardTitle>
+                                                                <CardText>Availablility: 7500<br/>
+                                                                    Price per head: RS 15500.00
+                                                                </CardText>
                                                                 <CardImg top width="100%" src={car6} alt="Card image cap" />
-
+                                                                <Button bsSize="small">Book Now</Button>
 
                                                             </Col>
                                                         </Row>
@@ -525,17 +533,23 @@ class Cruises extends React.Component {
                                                         <Row>
                                                             <Col sm="4">
                                                                 {/* <Card > */}
-                                                                <CardTitle>Toyota Hut</CardTitle>
-                                                                <CardText>63$ per hour</CardText>
+                                                                <CardTitle>Acertif</CardTitle>
+                                                                <CardText>Availablility: 7500<br/>
+                                                                    Price per head: RS 15500.00
+                                                                </CardText>
                                                                 <CardImg top width="100%" src={car7} alt="Card image cap" />
+                                                                <Button bsSize="small">Book Now</Button>
 
                                                                 {/* </Card> */}
                                                             </Col>
                                                             <Col sm="4">
 
-                                                                <CardTitle>Mazda L2</CardTitle>
-                                                                <CardText>60$ per hour</CardText>
+                                                                <CardTitle>Gemi</CardTitle>
+                                                                <CardText>Availablility: 10500<br/>
+                                                                    Price per head: RS 25500.00
+                                                                </CardText>
                                                                 <CardImg top width="100%" src={car8} alt="Card image cap" />
+                                                                <Button bsSize="small">Book Now</Button>
 
 
                                                             </Col>
