@@ -33,6 +33,8 @@
     "react-scripts": "1.1.5",
     "react-slideshow-image": "^1.0.0",
     "react-spinners": "^0.4.5",
+    "react-star-rating-component": "^1.4.1",
+    "react-tooltip": "^3.8.4",
     "reactstrap": "^6.4.0"
   },
   "scripts": {
